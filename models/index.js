@@ -11,3 +11,7 @@ async function connectToMongo() {
 }
 
 connectToMongo();
+
+module.exports = {
+    Trip: require('./Trip')
+}
