@@ -6,21 +6,23 @@ const TripSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  startDate: {
-    type: Date,
-    required: true,
+  startMonth: {
+    type: Number,
+    required: true
   },
-  endDate: {
-    type: Date,
-    required: true,
+  startDay: {
+    type: Number,
+    required: true
   },
-  /* activity: [
-    {
-    name: {type: String, required: true},
-    location: {type: String, required: true},
-    duration: {type: Number (time?), required: false}
-    }
-    ] */
+  endMonth: {
+    type: Number,
+    required: true
+  },
+  endDay: {
+    type: Number,
+    required: true
+  },
+  activities: Array
 });
 
 const Trip = mongoose.model("Trip", TripSchema);

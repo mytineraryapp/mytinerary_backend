@@ -1,3 +1,4 @@
 module.exports = {
-    tripCtrl: require('./tripCtrls')
+    tripCtrl: require('./tripCtrls'),
+    activityCtrl: require('./activityCtrls')
 }

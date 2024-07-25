@@ -13,5 +13,6 @@ async function connectToMongo() {
 connectToMongo();
 
 module.exports = {
-    Trip: require('./Trip')
+    Trip: require('./Trip'),
+    Activity: require('./Activity')
 }
