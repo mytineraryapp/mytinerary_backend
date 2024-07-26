@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken")
 const db = require("../models");
+// const auth = require("../auth")
 
 const registerUser = (req, res) => {
   bcrypt
@@ -74,7 +75,17 @@ const loginUser = (req, res) => {
       });
   };
 
+const freeEndpoint = (req, res) => {
+    res.json({message: "free access"})
+}
+
+const authEndpoint = (req, res) => {
+    res.json({message: "auth access"})
+}
+
 module.exports = {
   registerUser,
   loginUser,
+  freeEndpoint,
+  authEndpoint,
 };
