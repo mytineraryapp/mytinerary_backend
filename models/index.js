@@ -13,6 +13,7 @@ async function connectToMongo() {
 connectToMongo();
 
 module.exports = {
-    Trip: require('./Trip'),
-    Activity: require('./Activity')
-}
+  Trip: require("./Trip"),
+  Activity: require("./Activity"),
+  User: require("./User"),
+};
