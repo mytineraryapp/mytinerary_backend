@@ -5,7 +5,7 @@ const userRoute = require("./userRoutes");
 
 router.use("/trips", tripRoute);
 router.use("/activities", activityRoute);
-router.use("/register", userRoute)
+router.use("/user", userRoute)
 // router.use("/explore", exploreRoute) - Possible routes for exploring top trips/destinations
 // ideas here
 
