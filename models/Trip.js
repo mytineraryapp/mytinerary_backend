@@ -8,21 +8,21 @@ const TripSchema = new mongoose.Schema({
   },
   startMonth: {
     type: Number,
-    required: true
+    required: true,
   },
   startDay: {
     type: Number,
-    required: true
+    required: true,
   },
   endMonth: {
     type: Number,
-    required: true
+    required: true,
   },
   endDay: {
     type: Number,
-    required: true
+    required: true,
   },
-  activities: Array
+  activities: Array,
 });
 
 const Trip = mongoose.model("Trip", TripSchema);
