@@ -21,8 +21,7 @@ const TripSchema = new mongoose.Schema({
   endDay: {
     type: Number,
     required: true,
-  },
-  activities: Array,
+  }
 });
 
 const Trip = mongoose.model("Trip", TripSchema);

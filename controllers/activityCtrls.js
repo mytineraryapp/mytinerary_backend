@@ -1,7 +1,18 @@
 const db = require("../models");
 
-const getActivities = (req, res) => {
+//future feature? get all activites in all trips
+const getAllActivities = (req, res) => {
   db.Activity.find({}).then((foundActivity) => {
+    if (!foundActivity) {
+      res.status(404).json({ message: 'cannot find any activites.' })
+    } else {
+      res.status(200).json({ data: foundActivity })
+    }
+  })
+}
+
+const getActivities = (req, res) => {
+  db.Activity.find({ tripID: `${req.params.tripID}` }).then((foundActivity) => {
     if (!foundActivity) {
       res.status(404).json({ message: "cannot find any activities." });
     } else {
@@ -11,6 +22,8 @@ const getActivities = (req, res) => {
 };
 
 const createActivity = (req, res) => {
+  req.body.tripID = req.params.tripID;
+  console.log(req.body);
   db.Activity.create(req.body).then((createdActivity) => {
     if (!createdActivity) {
       res.status(400).json({ message: "cannot create activity" });
@@ -48,18 +61,9 @@ const deleteActivity = (req, res) => {
   });
 };
 
-// const deleteTrip = (req, res) => {
-//   db.Trip.findByIdAndDelete(req.params.id)
-//   .then((deletedTrip) => {
-//     if(!deletedTrip) {
-//       res.status(400).json({message: 'could not delete trip.'})
-//     } else {
-//       res.status(200).json({data: deletedTrip, message: 'trip deleted.'})
-//     }
-//   })
-// }
 
 module.exports = {
+  getAllActivities,
   getActivities,
   createActivity,
   updateActivity,
