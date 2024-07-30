@@ -1,10 +1,9 @@
 const db = require("../models");
 
-//future feature? get all activites in all trips
 const getAllActivities = (req, res) => {
   db.Activity.find({}).then((foundActivity) => {
     if (!foundActivity) {
-      res.status(404).json({ message: 'cannot find any activites.' })
+      res.status(404).json({ message: 'cannot find any activities.' })
     } else {
       res.status(200).json({ data: foundActivity })
     }
